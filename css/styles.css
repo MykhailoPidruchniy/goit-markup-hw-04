@@ -51,15 +51,21 @@ text-decoration: none;
 position: relative; 
 }
 
-.header-link:after {
+.header-link::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 4px;
-    color: #404BBF;
+    background-color: #404bbf;
     border-radius: 2px;
+    bottom: -1px;
+}
+
+.header-link.current {
+    color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -147,18 +153,21 @@ text-decoration: none;
 
 .contacts:hover {
     color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts:focus {
     color: #404bbf;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Section 1 */
 
 .dark-blue {
+    max-width: 100%;
     padding: 188px 0px;
     background-color: #2E2F42;
-    background-image: linear-gradient(#2E2F42B2, #2E2F42B2), url(../images/people-office.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -198,6 +207,7 @@ margin: 0 auto;
 
 .button:hover {
     background-color: #404BBF;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:focus {
@@ -211,12 +221,14 @@ padding-top: 120px;
 background-color: #FFF;
 }
 
-.icons {
-    background-color: #F4F4FD;
-    border: 1px solid #8E8F99;
+.vector-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 122px;
+    background-color: #f4f4fd;
     border-radius: 4px;
-    width: 264px;
-    height: 112px;
+    margin-bottom: 8px;
 }
 
 .about {
@@ -281,6 +293,13 @@ letter-spacing: 0.02em;
     background-color: #F4F4FD;
 }
 
+.people-image {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+}
+
 .team {
     margin-bottom: 72px;
 color: #2E2F42;
@@ -296,6 +315,7 @@ text-transform: capitalize;
 
 .worker {
     padding: 32px 0px;
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08); 
 }
 
 .image-list {
@@ -307,6 +327,7 @@ gap: 24px;
 background-color: #FFFFFF;
 width: calc((100% - 72px) / 4);
 border-radius: 0px 0px 4px 4px;
+box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);;
 }
 
 
@@ -334,11 +355,10 @@ letter-spacing: 0.02em;
 }
 
 .icons-image {
-    border-radius: 50%;
-    background-color: #4D5AE5; 
+    fill: #f4f4fd;
 }
 
-.icons-image:hover {
+.icons-social:hover {
     background-color: #404BBF;
     transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -348,6 +368,10 @@ letter-spacing: 0.02em;
     justify-content: center;
     align-items: center;
     gap: 24px; 
+    width: 100%;
+    height: 100%;
+    background-color: #4d5ae5;
+    border-radius: 50%;
 }
 
 /* Section 4 */
@@ -365,6 +389,32 @@ gap: 48px 24px;
 .image-portfolio {
 width: 360px;
 width: calc((100% - 48px) / 3);
+transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-portfolio:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transform: translateY(0%);
+}
+
+.image-profecion {
+    position: relative;
+    overflow: hidden;
+}
+
+.text-info {
+    position: absolute;
+    top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #f4f4fd;
+    padding: 40px 32px;
+    background-color: #4d5ae5;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-image {
@@ -408,6 +458,24 @@ letter-spacing: 0.02em;
 }
 
 /* Footer */
+
+.footer {
+    display: flex;
+    align-items: baseline;
+}
+
+.logo-text {
+    margin-right: 120px;
+}
+
+.social-media {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
 
 .end {
     padding: 100px 0px;
@@ -459,12 +527,29 @@ margin: 0;
     gap: 16px;
 }
 
-.icons-masage {
+
+.footer-icons {
+    display: flex;
+    gap: 16px; 
+    width: 40;
+    height: 40;
+}
+
+.footer-masage {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color:#4d5ae5;
     border-radius: 50%;
-    background-color: #4D5AE5;
 }
 
 .icons-masage:hover {
     background-color: #31d0aa;
     transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icons-masage {
+    fill: #f4f4fd;
 }
