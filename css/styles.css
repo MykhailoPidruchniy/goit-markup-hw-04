@@ -11,7 +11,8 @@ img {
 /* Heder section */
 
 .header {
-    border-bottom: 1px solid #e7e9fc  
+    border-bottom: 1px solid #e7e9fc;
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -67,13 +68,17 @@ position: relative;
     bottom: -1px;
 }
 
-.header-link.current {
-    color: #404bbf;
+.link-current {
+    color: #404bbf; 
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contacts-current {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
-.header-link.current {
+.link-current {
     color: #404BBF;
 }
 
@@ -156,6 +161,7 @@ font-weight: 400;
 letter-spacing: 0.02em;
 line-height: 24px; 
 text-decoration: none;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 .contacts:hover {
