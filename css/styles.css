@@ -47,8 +47,24 @@ font-style: normal;
 font-weight: 500;
 letter-spacing: 0.02em;
 line-height: 24px; 
-text-decoration: none;
-    
+text-decoration: none;  
+position: relative; 
+}
+
+.header-link:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    color: #404BBF;
+    border-radius: 2px;
+}
+
+.header-link:hover,
+.header-link.current {
+    color: #404BBF;
 }
 
 .header-contacts {
@@ -142,7 +158,7 @@ text-decoration: none;
 .dark-blue {
     padding: 188px 0px;
     background-color: #2E2F42;
-    background-image: url(../images/people-office.jpg);
+    background-image: linear-gradient(#2E2F42B2, #2E2F42B2), url(../images/people-office.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -193,6 +209,14 @@ margin: 0 auto;
 padding-bottom: 120px;
 padding-top: 120px;
 background-color: #FFF;
+}
+
+.icons {
+    background-color: #F4F4FD;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    width: 264px;
+    height: 112px;
 }
 
 .about {
@@ -309,6 +333,23 @@ line-height: 24px;
 letter-spacing: 0.02em;
 }
 
+.icons-image {
+    border-radius: 50%;
+    background-color: #4D5AE5; 
+}
+
+.icons-image:hover {
+    background-color: #404BBF;
+    transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icons-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px; 
+}
+
 /* Section 4 */
 .work {
     background-color: #fff;
@@ -409,4 +450,21 @@ font-weight: 400;
 line-height: 24px;
 letter-spacing: 0.02em;
 margin: 0;
+}
+
+.icons-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.icons-masage {
+    border-radius: 50%;
+    background-color: #4D5AE5;
+}
+
+.icons-masage:hover {
+    background-color: #31d0aa;
+    transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
