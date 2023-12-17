@@ -408,17 +408,19 @@ letter-spacing: 0.02em;
 display: flex;
 flex-wrap: wrap;
 gap: 48px 24px;
-transform: translateY(0%);
 }
 
 .image-portfolio {
 width: 360px;
 width: calc((100% - 48px) / 3);
 transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 .image-portfolio:hover {
+    transform: translateY(0%);
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    
 }
 
 .image-profecion {
@@ -426,7 +428,8 @@ transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
 }
 
-.text-info {
+
+.design {
     position: absolute;
     top: 0;
     font-size: 16px;
