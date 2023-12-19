@@ -404,11 +404,7 @@ letter-spacing: 0.02em;
     transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icons-social {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 /* Section 4 */
 .work {
