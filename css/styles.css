@@ -313,10 +313,11 @@ letter-spacing: 0.02em;
 
 .photo-list {
     display: flex;
+    justify-content: center; 
     gap: 24px;
 }
 
-.photo {
+.photo-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -324,6 +325,17 @@ letter-spacing: 0.02em;
     height: 100%;
     background-color: #4d5ae5;
     border-radius: 50%;
+}
+
+.photo-link:hover {
+    background-color: #404bbf; 
+}
+
+.photo-link:focus {
+    background-color: #404bbf; 
+}
+
+.photo {
     width: 40px;
     height: 40px;
 }
