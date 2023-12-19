@@ -552,12 +552,7 @@ letter-spacing: 0.02em;
 margin: 0;
 }
 
-.icons-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-}
+
 
 
 .footer-icons {
